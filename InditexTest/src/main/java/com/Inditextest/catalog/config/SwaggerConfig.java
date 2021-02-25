@@ -30,23 +30,7 @@ public class SwaggerConfig
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors.basePackage("com.Inditextest.catalog.controllers"))
                 .paths(PathSelectors.regex("/*.*"))
-                .build()
-                .apiInfo(apiInfo());
-    }
-
-
-    private List<SecurityReference> defaultAuth()
-    {
-        return Arrays
-                .asList(new SecurityReference("JWT", new AuthorizationScope[] {}));
-    }
-
-    private ApiInfo apiInfo()
-    {
-        return new ApiInfo("Webhook Client Restful API", "This API provides the necessary endpoints needed by the Webhook Clients",
-                "API V0.1.0",
-                "Terms of service", new Contact("Architecture Team", "http://www.example.com", "email@company.com"),
-                "API License", "http://www.example.com", Collections.emptyList());
+                .build();
     }
 
 }

@@ -16,7 +16,7 @@ import com.Inditextest.catalog.model.projection.ItemPriceProj;
 import com.Inditextest.catalog.service.interfaces.IPricesService;
 
 @RestController
-@Api (value = "LogicController", tags = { "Logic Controller" })
+@Api (value = "PricesController", tags = { "Prices Controller" })
 @RequestMapping ("api/v1/prices")
 public class PricesController
 {

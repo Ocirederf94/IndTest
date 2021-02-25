@@ -1,6 +1,3 @@
-// **********************************************************************
-// Copyright (c) 2021 Panel Sistemas Informaticos, Spain.
-// **********************************************************************
 package com.Inditextest.catalog.service;
 
 import java.time.LocalDateTime;

@@ -1,8 +1,6 @@
-// **********************************************************************
-// Copyright (c) 2021 Panel Sistemas Informaticos, Spain.
-// **********************************************************************
 package com.Inditextest.catalog.model.projection;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import com.Inditextest.catalog.model.Brand;
@@ -20,5 +18,5 @@ public interface ItemPriceProj
 
     public LocalDateTime getEndDate();
 
-    public Double getPrice();
+    public BigDecimal getPrice();
 }

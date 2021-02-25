@@ -1,11 +1,9 @@
-// **********************************************************************
-// Copyright (c) 2021 Panel Sistemas Informaticos, Spain.
-// **********************************************************************
 package com.Inditextest.catalog.controllers;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.Test;
@@ -31,27 +29,27 @@ public class PricesControllerTest
         ItemPrice itemPrice = controller.getItemPrice(LocalDateTime.parse("2020-06-14T10:00:00"), 35455, 1);
         assertEquals(1, itemPrice.getId());
         ItemPriceProj itemPriceData = controller.getItemPriceData(LocalDateTime.parse("2020-06-14T10:00:00"), 35455, 1);
-        assertEquals(35.50d, itemPriceData.getPrice());
+        assertEquals(0, new BigDecimal("35.50").compareTo(itemPriceData.getPrice()));
 
         itemPrice = controller.getItemPrice(LocalDateTime.parse("2020-06-14T16:00:00"), 35455, 1);
         assertEquals(2, itemPrice.getId());
         itemPriceData = controller.getItemPriceData(LocalDateTime.parse("2020-06-14T16:00:00"), 35455, 1);
-        assertEquals(25.45d, itemPriceData.getPrice());
+        assertEquals(0, new BigDecimal("25.45").compareTo(itemPriceData.getPrice()));
 
         itemPrice = controller.getItemPrice(LocalDateTime.parse("2020-06-14T21:00:00"), 35455, 1);
         assertEquals(1, itemPrice.getId());
         itemPriceData = controller.getItemPriceData(LocalDateTime.parse("2020-06-14T21:00:00"), 35455, 1);
-        assertEquals(35.50d, itemPriceData.getPrice());
+        assertEquals(0, new BigDecimal("35.50").compareTo(itemPriceData.getPrice()));
 
         itemPrice = controller.getItemPrice(LocalDateTime.parse("2020-06-15T10:00:00"), 35455, 1);
         assertEquals(3, itemPrice.getId());
         itemPriceData = controller.getItemPriceData(LocalDateTime.parse("2020-06-15T10:00:00"), 35455, 1);
-        assertEquals(30.50d, itemPriceData.getPrice());
+        assertEquals(0, new BigDecimal("30.50").compareTo(itemPriceData.getPrice()));
 
         itemPrice = controller.getItemPrice(LocalDateTime.parse("2020-06-16T21:00:00"), 35455, 1);
         assertEquals(4, itemPrice.getId());
         itemPriceData = controller.getItemPriceData(LocalDateTime.parse("2020-06-16T21:00:00"), 35455, 1);
-        assertEquals(38.95d, itemPriceData.getPrice());
+        assertEquals(0, new BigDecimal("38.95").compareTo(itemPriceData.getPrice()));
     }
 
     @Test

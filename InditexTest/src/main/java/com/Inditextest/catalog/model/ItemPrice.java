@@ -1,9 +1,9 @@
 package com.Inditextest.catalog.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table (name = "item_prices")
@@ -46,7 +44,7 @@ public class ItemPrice implements Serializable
     private Integer priority;
 
     @JoinColumn ()
-    private Double price;
+    private BigDecimal price;
 
     @JoinColumn ()
     private String currency;
@@ -166,7 +164,7 @@ public class ItemPrice implements Serializable
     /**
      * @return the price
      */
-    public Double getPrice()
+    public BigDecimal getPrice()
     {
         return price;
     }
@@ -174,7 +172,7 @@ public class ItemPrice implements Serializable
     /**
      * @param price the price to set
      */
-    public void setPrice(Double price)
+    public void setPrice(BigDecimal price)
     {
         this.price = price;
     }
@@ -193,14 +191,6 @@ public class ItemPrice implements Serializable
     public void setCurrency(String currency)
     {
         this.currency = currency;
-    }
-
-    /**
-     * @return the serialversionuid
-     */
-    public static long getSerialversionuid()
-    {
-        return serialVersionUID;
     }
 
     @Override
